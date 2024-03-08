@@ -1,7 +1,7 @@
 ### Welcome on my personnal profile! 👋
 
 - 🔭 I’m mostly working on software development
-- 🌱 I’m currently learning reverse engineering
+- 🌱 I’m currently learning PHP & SQL
 - ⚡ My most used development languages:
 - ⚡ Python for fast script development
 - ⚡ C++ for it's low level approaches (reverse engineering)
