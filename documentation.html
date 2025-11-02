@@ -60,7 +60,7 @@
         }
 
         .sidebar {
-            flex: 0 0 250px;
+            flex: 0 0 300px;
             background-color: var(--bg-card);
             border-radius: 20px;
             padding: 25px;
@@ -98,6 +98,10 @@
         .doc-content h3 {
             color: var(--violet);
             margin-top: 40px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
         }
 
         pre {
@@ -140,6 +144,13 @@
         .section-anchor {
             scroll-margin-top: 80px;
         }
+
+        .doc-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 
@@ -171,6 +182,11 @@
             <h5>Documentation</h5>
             <a href="#intro">Introduction</a>
             <a href="#resource-editor">ResourceEditor</a>
+            <ul>
+                <li><a href="#unregistered-components">Unregistered Components</a></li>
+                <li><a href="#marked-unregistered">Marked Unregistered</a></li>
+                <li><a href="#scene-infos">Scene Infos</a></li>
+            </ul>
             <a href="#format-editor-cli">FormatEditorCLI</a>
         </aside>
 
@@ -194,7 +210,8 @@
                     <br><br>
                     These tools are intended for tank remodeling and to positively support the Blitz Modding Community.
                     <br><br>
-                    <b>Under any circumstances</b>. I do not encourage people to cheat, leaking private company's infos, in general violating the terms of service of the released games.
+                    <b>Under any circumstances</b>. I do not encourage people to cheat, leaking private company's infos,
+                    in general violating the terms of service of the released games.
                     <br><br>
                     Thanks for understanding.
                 </div>
@@ -234,12 +251,47 @@
                     </li>
                 </ul>
             </div>
+            <div id="unregistered-components" class="section-anchor">
+                <h3>📗 Unregistered Components</h3>
+                <p><b>Unregistered Components</b> are components that are loaded but not supported by the current
+                    version of the framework.<br>
+                    This new feature allows load and edit components content in a YAML-based approach.<br>
+            </div>
+            <div id="marked-unregistered" class="section-anchor">
+                <h3>📗 Marked Unregistered</h3>
+
+                <p><b>Marked Unregistered</b> is a new option has been added to the general ResourceEditor settings.<br>
+                    This new feature allows to mark 3D components from the engine as unregistered.<br>
+                    This way, if new settings are introduced or the component undergoes major changes, you can disable
+                    it and switch to a YAML-based approach.</p>
+
+                <pre><code class="language-yaml">keyedArchive:
+    list:
+        variantVector:
+        -   string: "SlotComponent"</code></pre>
+                <div class="image-box">
+                    <img class="doc-image" src="images/marked-unregistered.png" alt="Marked Unregistered Usage Example">
+                </div>
+                <div id="scene-infos" class="section-anchor">
+                    <h3>📗 Scene Infos</h3>
+                    <p>
+                        <b>Scene Infos</b> panel has been updated with new YAML-based features. <br>
+                        - <b>Scene Components</b> and <b>Scene Component Sets</b> are components that apply to the entire scene. <br>
+                        - <b>Scene Render Config</b> replaces the old Global Material. <br>
+                        - <b>Particle Emitter Nodes</b> replace old YAML files system, with new attributes and variables. <br>
+                    </p>
+                    <div class="example-box">
+                        <b>Note:</b> Implementing these new features in a graphical interface would be complex. <br>
+                        And updates may differ between Wargaming and Lesta.<br>For now, keeping them in YAML is more practical, especially since this kind of content could change often.
+                    </div>
+                </div>
+            </div>
 
             <div id="format-editor-cli" class="section-anchor">
                 <h2>📘 FormatEditorCLI</h2>
 
-                <p><b>FormatEditorCLI</b> is a CLI tool designed to convert files between specific formats and YAML, 
-                and vice versa, allowing modders to edit file contents textually.</p>
+                <p><b>FormatEditorCLI</b> is a CLI tool designed to convert files between specific formats and YAML,
+                    and vice versa, allowing modders to edit file contents textually.</p>
 
                 <p>Available methods/options:</p>
 
@@ -255,7 +307,7 @@
                 </div>
 
                 <div class="image-box">
-                    <img src="images/format-editor-cli.png" alt="FormatEditorCLI Usage Example" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+                    <img class="doc-image" src="images/format-editor-cli.png" alt="FormatEditorCLI Usage Example">
                 </div>
             </div>
         </section>
