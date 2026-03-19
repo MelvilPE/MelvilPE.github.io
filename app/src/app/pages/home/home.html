@@ -1,0 +1,73 @@
+<section class="pt-40 pb-24 text-center bg-gradient-to-br from-[#1b0a2e] to-[#3b1571]">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-4xl md:text-5xl font-extrabold">
+      DAVA Revanced
+    </h1>
+    <p class="mt-6 text-gray-300 text-lg">
+      A reworked and enhanced continuation of
+      <a href="https://github.com/smile4u/dava.engine"
+         target="_blank"
+         class="underline text-white">
+        DAVA.Framework</a>
+      for full customization of <u>Blitz Tanks Models</u>.
+    </p>
+    <a href="https://discord.gg/FS9uTTnab7"
+       class="mt-6 inline-block bg-purple-500 hover:bg-purple-700 px-6 py-3 rounded-lg text-lg transition">
+      Join the Community
+    </a>
+  </div>
+</section>
+
+<section class="py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold">Main Features</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-[#1b1130] p-8 rounded-2xl text-center hover:shadow-[0_0_20px_rgba(166,78,220,0.3)] transition transform hover:-translate-y-2">
+        <div class="text-4xl mb-4 text-purple-400">⚙️</div>
+        <h5 class="font-semibold mb-4">Extended features</h5>
+        <p class="text-gray-400">
+          Supports YAML editing unregistered components<br>
+          Global scene infos etc...
+        </p>
+      </div>
+      <div class="bg-[#1b1130] p-8 rounded-2xl text-center hover:shadow-[0_0_20px_rgba(166,78,220,0.3)] transition transform hover:-translate-y-2">
+        <div class="text-4xl mb-4 text-purple-400">🎨</div>
+        <h5 class="font-semibold mb-4">Improved Material Editor</h5>
+        <p class="text-gray-400">
+          New flags and presets available properties<br>
+          Support for custom cull modes
+        </p>
+      </div>
+      <div class="bg-[#1b1130] p-8 rounded-2xl text-center hover:shadow-[0_0_20px_rgba(166,78,220,0.3)] transition transform hover:-translate-y-2">
+        <div class="text-4xl mb-4 text-purple-400">💾</div>
+        <h5 class="font-semibold mb-4">Extended Compatibility</h5>
+        <p class="text-gray-400">
+          Load and save new tank models compatible with the latest scene file version
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-center text-3xl font-bold mb-8">Gallery Preview</h2>
+    <div class="relative">
+      <div id="carousel" class="overflow-hidden rounded-xl">
+        <img id="carousel-image" [src]="getSlideSRC()" class="w-full">
+        <div id="carousel-caption"
+             class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 px-4 py-2 rounded text-white">
+          {{ getSlideCaption() }}
+        </div>
+      </div>
+      <button (click)="prevSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 px-3 py-2">
+        ‹
+      </button>
+      <button (click)="nextSlide()" class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 px-3 py-2">
+        ›
+      </button>
+    </div>
+  </div>
+</section>

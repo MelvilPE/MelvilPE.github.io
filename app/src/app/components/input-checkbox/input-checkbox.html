@@ -1,0 +1,10 @@
+<div [formGroup]="formGroup">
+  <label class="relative inline-flex items-center cursor-pointer">
+    <input [formControl]="getControl()" type="checkbox" class="sr-only peer" />
+    <div class="w-9 h-5 bg-[#3A4650] rounded-full peer peer-checked:bg-[#4E9EBC]
+                transition-colors duration-300"></div>
+    <div class="absolute left-0.5 top-0.5 w-4 h-4 bg-[#8FA4B2] rounded-full
+                shadow-md peer-checked:translate-x-4 peer-checked:bg-white
+                transition-all duration-300"></div>
+  </label>
+</div>

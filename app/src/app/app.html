@@ -1,0 +1,54 @@
+<body class="bg-[#0b0b0b] text-gray-100 scroll-smooth">
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-black/70">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a routerLink="/home" class="text-purple-400 font-bold text-xl tracking-wide">
+        DAVA Revanced
+      </a>
+      <div class="hidden md:flex items-center space-x-6">
+        <a routerLink="/home" class="hover:text-purple-400 transition">Home</a>
+        <a routerLink="/documentation" class="hover:text-purple-400 transition">Documentation</a>
+        <a routerLink="/options-editor" class="hover:text-purple-400 transition">Options Editor</a>
+        <a href="https://discord.gg/FS9uTTnab7"
+          target="_blank"
+          class="bg-purple-500 hover:bg-purple-700 px-4 py-2 rounded-lg transition">
+          Join Discord
+        </a>
+      </div>
+      <button (click)="toggleMobileMenu()" class="md:hidden text-2xl">
+        {{ isMobileMenuOpen ? '✕' : '☰' }}
+      </button>
+    </div>
+    <div
+      class="md:hidden px-4 pb-4 space-y-3 transition-all duration-300"
+      [class.hidden]="!isMobileMenuOpen"
+    >
+      <a routerLink="/home"
+        (click)="isMobileMenuOpen = false; $event.stopPropagation()"
+        class="block hover:text-purple-400">
+        Home
+      </a>
+      <a routerLink="/documentation"
+        (click)="isMobileMenuOpen = false; $event.stopPropagation()"
+        class="block hover:text-purple-400">
+        Documentation
+      </a>
+      <a routerLink="/options-editor"
+        (click)="isMobileMenuOpen = false; $event.stopPropagation()"
+        class="block hover:text-purple-400">
+        Options Editor
+      </a>
+      <a href="https://discord.gg/FS9uTTnab7"
+        target="_blank"
+        (click)="isMobileMenuOpen = false; $event.stopPropagation()"
+        class="block bg-purple-500 px-4 py-2 rounded-lg text-center">
+        Join Discord
+      </a>
+    </div>
+  </nav>
+
+  <router-outlet />
+
+  <footer class="bg-black py-10 text-center text-gray-400 text-sm">
+    <p>&copy; 2025 <span class="text-purple-400">DAVA Revanced</span>. All rights reserved.</p>
+  </footer>
+</body>

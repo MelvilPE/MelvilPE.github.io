@@ -1,0 +1,24 @@
+
+<div class="w-screen h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-[520px] h-[80vh] bg-[#262B2F] border border-[#3A4650] border-2 shadow-lg rounded-lg flex flex-col">
+    <h2 class="text-xl font-bold p-4 text-center text-white uppercase">DEV OPTIONS</h2>
+    <div class="flex-1 p-4 overflow-auto text-white">
+      <app-dev-options-content
+        [devOptions]="devOptions"
+        (devOptionsChange)="onDevOptionsChange($event)"
+      ></app-dev-options-content>
+    </div>
+    <div class="p-4 border-t border-[#3A4650] flex gap-4">
+      <button
+        (click)="onLoadClicked()"
+        class="flex-1 bg-gradient-to-b from-[#4B555F] to-[#3A4650] text-white text-xl uppercase font-bold px-4 py-2 rounded hover:brightness-110 transition">
+        Load
+      </button>
+      <button
+        (click)="onSaveClicked()"
+        class="flex-1 bg-gradient-to-b from-[#4B555F] to-[#3A4650] text-white text-xl uppercase font-bold px-4 py-2 rounded hover:brightness-110 transition">
+        Save
+      </button>
+    </div>
+  </div>
+</div>

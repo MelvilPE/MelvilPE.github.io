@@ -1,0 +1,148 @@
+<div class="max-w-7xl mx-auto px-4 pt-28 flex flex-col lg:flex-row gap-8">
+  <aside class="lg:w-72 bg-[#1b1130] rounded-2xl lg:sticky lg:top-24 lg:h-fit">
+    <button
+      (click)="isSidebarOpen = !isSidebarOpen"
+      class="lg:hidden w-full flex justify-between items-center px-6 py-4 text-purple-400 font-bold"
+    >
+      Documentation
+      <span>{{ isSidebarOpen ? '▲' : '▼' }}</span>
+    </button>
+
+    <div [class.hidden]="!isSidebarOpen" class="lg:block p-6">
+      <h5 class="hidden lg:block text-purple-400 font-bold mb-4">Documentation</h5>
+      <div class="space-y-2 text-gray-400">
+        <a (click)="scrollTo('intro')" class="block hover:text-purple-400 cursor-pointer">Introduction</a>
+        <a (click)="scrollTo('resource-editor')" class="block hover:text-purple-400 cursor-pointer">ResourceEditor</a>
+        <div class="ml-4 space-y-1">
+          <a (click)="scrollTo('unregistered-components')" class="block hover:text-purple-400 cursor-pointer">Unregistered Components</a>
+          <a (click)="scrollTo('marked-unregistered')" class="block hover:text-purple-400 cursor-pointer">Marked Unregistered</a>
+          <a (click)="scrollTo('scene-infos')" class="block hover:text-purple-400 cursor-pointer">Scene Infos</a>
+        </div>
+        <a (click)="scrollTo('format-editor-cli')" class="block hover:text-purple-400 cursor-pointer">FormatEditorCLI</a>
+        <a (click)="scrollTo('resource-dlc')" class="block hover:text-purple-400 cursor-pointer">ResourceDLC</a>
+        <a (click)="scrollTo('downloads')" class="block hover:text-purple-400 cursor-pointer">Downloads</a>
+      </div>
+    </div>
+  </aside>
+  <main class="flex-1 bg-[#1b1130] p-8 rounded-2xl space-y-10">
+    <section id="intro" class="scroll-mt-24">
+      <h2 class="text-2xl font-bold text-purple-400 mb-4">📘 Introduction</h2>
+      <p>
+        <b>DAVA Revanced</b> is a reworked and enhanced continuation of
+        <a href="https://github.com/smile4u/dava.engine" target="_blank" class="underline">
+          DAVA.Framework
+        </a>.
+      </p>
+      <p class="mt-3">
+        <b>This project</b> provides a set of tools for modding <u>Blitz Tank Models</u>,
+        allowing creators to customize and enhance game assets independently for
+        <b>personal use and community-driven purposes</b>.
+      </p>
+      <div class="mt-6 bg-[#20153f] border-l-4 border-purple-500 p-4 rounded-lg text-sm text-gray-300 space-y-2">
+        <b>Disclaimer:</b> This project is an <b>independent, community-driven initiative</b>.
+        It is <u>not affiliated with, endorsed by, or partnered with Wargaming or Lesta Studio</u>.
+        <br><br>
+        This project is based only on <b>publicly available versions</b> of DAVA.Framework.
+        It does not imply any claim to rights on the engine or its licensing status.
+        <br><br>
+        These tools are intended solely for <b>personal use and community-driven tank remodeling</b>.
+        <br><br>
+        <b>Under no circumstances</b> do they encourage cheating, leaking private company information,
+        or violating the terms of service of the released games.
+        <br><br>
+        If Wargaming, Lesta Studio, or any rights holder wants to contact me regarding this project, I will
+        <b>review the request and take appropriate action</b>.
+        <br><br>
+        Link to the project repository:
+        <a href="https://github.com/MelvilPE/dava.revanced"
+          target="_blank"
+          class="text-purple-400 underline hover:text-purple-300 transition">
+          https://github.com/MelvilPE/dava.revanced
+        </a>
+        <br><br>
+        Thanks for understanding.
+      </div>
+    </section>
+    <section id="resource-editor" class="scroll-mt-24">
+      <h2 class="text-2xl font-bold text-purple-400 mb-4">📘 ResourceEditor</h2>
+      <p>
+        ResourceEditor is the main tool for creating and editing Blitz Tank Models.
+      </p>
+      <p class="mt-3">
+        The original framework supported up to version 24.
+        This version supports up to version 48.
+      </p>
+      <ul class="list-disc ml-6 mt-4 space-y-2">
+        <li><b>Extended Features:</b> YAML editing, global scene infos</li>
+        <li><b>Material Editor:</b> new flags, presets, cull modes</li>
+        <li><b>Compatibility:</b> latest tank models support</li>
+      </ul>
+    </section>
+    <section id="unregistered-components" class="scroll-mt-24">
+      <h3 class="text-xl font-semibold text-purple-400">📗 Unregistered Components</h3>
+      <p class="mt-2">
+        Components not supported by the framework but still loaded.
+        Editable via YAML.
+      </p>
+    </section>
+    <section id="marked-unregistered" class="scroll-mt-24">
+      <h3 class="text-xl font-semibold text-purple-400">📗 Marked Unregistered</h3>
+      <p class="mt-2">
+        Option to mark components as unregistered and switch to YAML editing.
+      </p>
+      <pre class="mt-4 bg-[#151028] p-4 rounded-lg overflow-x-auto text-sm text-purple-300">
+keyedArchive:
+  list:
+    variantVector:
+    - string: "SlotComponent"
+      </pre>
+      <img src="/images/marked-unregistered.png"
+           class="mt-4 rounded-lg w-full" />
+    </section>
+    <section id="scene-infos" class="scroll-mt-24">
+      <h3 class="text-xl font-semibold text-purple-400">📗 Scene Infos</h3>
+      <p class="mt-2">
+        Scene Components, Render Config and Particle Emitters are now YAML-based.
+      </p>
+      <img src="/images/scene-infos.png"
+           class="mt-4 rounded-lg w-full" />
+      <div class="mt-4 bg-[#20153f] border-l-4 border-purple-500 p-4 rounded-lg text-sm">
+        Keeping these features in YAML is currently more practical due to frequent changes.
+      </div>
+    </section>
+    <section id="format-editor-cli" class="scroll-mt-24">
+      <h2 class="text-2xl font-bold text-purple-400">📘 FormatEditorCLI</h2>
+      <p class="mt-3">
+        CLI tool to convert between YAML and engine file formats.
+      </p>
+      <ul class="list-disc ml-6 mt-3 space-y-2">
+        <li>KeyedArchive → YAML</li>
+        <li>YAML → KeyedArchive</li>
+        <li>Scene → YAML</li>
+        <li>YAML → Scene</li>
+      </ul>
+      <img src="/images/format-editor-cli.png"
+           class="mt-4 rounded-lg w-full" />
+      <div class="mt-4 bg-[#20153f] p-4 rounded-lg">
+        FormatEditorCLI -i input.sc2 -o output.yaml -m 2
+      </div>
+    </section>
+    <section id="resource-dlc" class="scroll-mt-24">
+      <h2 class="text-2xl font-bold text-purple-400">📘 ResourceDLC</h2>
+      <p class="mt-3">
+        Tool for working with DVPK / DVPD / DVPM archives.
+      </p>
+      <img src="/images/resource-dlc.png"
+           class="mt-4 rounded-lg w-full" />
+      <div class="mt-4 bg-[#20153f] p-4 rounded-lg">
+        ResourceDLC -i input.dvpm -o Output/ -m 0
+      </div>
+    </section>
+    <section id="downloads" class="scroll-mt-24">
+      <h2 class="text-2xl font-bold text-purple-400">🛠️ Downloads</h2>
+      <div class="mt-4 bg-[#20153f] border-l-4 border-purple-500 p-4 rounded-lg">
+        Join the Discord community to access downloads and updates.
+      </div>
+    </section>
+  </main>
+</div>
