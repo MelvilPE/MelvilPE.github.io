@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ConstantsService {
   constructor() {}
 
-  public getDefaultDevOptions(): any {
+  public getDefaultOptionsGlobal(): any {
     return {
       "keyedArchive": {
         "Account": {
@@ -7783,32 +7783,1474 @@ export class ConstantsService {
     }
   }
 
-  public getSectionNames() {
-    return Object.keys(this.getDefaultDevOptions()?.keyedArchive);
+  public getDefaultOptionsDevice(): any {
+    return {
+      "keyedArchive": {
+        "Camera": {
+          "keyedArchive": {
+            "1) Zoom type": {
+              "keyedArchive": {
+                "count": {
+                  "int32": 4
+                },
+                "selected": {
+                  "int32": 3
+                },
+                "type": {
+                  "string": "combo"
+                },
+                "value0": {
+                  "string": "Wheel Scroller"
+                },
+                "value1": {
+                  "string": "Tumbler"
+                },
+                "value2": {
+                  "string": "3 fixed"
+                },
+                "value3": {
+                  "string": "Smart zoom"
+                }
+              }
+            },
+            "2) Zoom tumbler is button": {
+              "keyedArchive": {
+                "value": {
+                  "bool": false
+                }
+              }
+            },
+            "3) Camera 2D X angle by 3D": {
+              "keyedArchive": {
+                "value": {
+                  "bool": false
+                }
+              }
+            },
+            "4) Center on touch @sniper": {
+              "keyedArchive": {
+                "value": {
+                  "bool": false
+                }
+              }
+            },
+            "5) Angle deviation green (degr)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 15
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 0
+                }
+              }
+            },
+            "6) Angle deviation red (degr)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 20
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 10
+                }
+              }
+            },
+            "7) Follow hull on movement?": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "8) Default pitch angle (degr)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 80
+                },
+                "min": {
+                  "float": -70
+                },
+                "value": {
+                  "float": 0
+                }
+              }
+            },
+            "9) Max pitch angle limit (degr)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 89
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 25
+                }
+              }
+            },
+            "10) Default fov": {
+              "keyedArchive": {
+                "max": {
+                  "float": 60
+                },
+                "min": {
+                  "float": 40
+                },
+                "value": {
+                  "float": 54
+                }
+              }
+            },
+            "11) Camera max lock time (sec)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.01
+                },
+                "value": {
+                  "float": 0.3
+                }
+              }
+            },
+            "12) Camera backward offset": {
+              "keyedArchive": {
+                "max": {
+                  "float": 50
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 6
+                }
+              }
+            },
+            "13) Camera backward fov offset": {
+              "keyedArchive": {
+                "max": {
+                  "float": 50
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 8
+                }
+              }
+            },
+            "14) Camera backward type in": {
+              "keyedArchive": {
+                "count": {
+                  "int32": 13
+                },
+                "selected": {
+                  "int32": 1
+                },
+                "type": {
+                  "string": "combo"
+                },
+                "value0": {
+                  "string": "LINEAR"
+                },
+                "value1": {
+                  "string": "EASE IN"
+                },
+                "value2": {
+                  "string": "EASE OUT"
+                },
+                "value3": {
+                  "string": "EASE IN EASY OUT"
+                },
+                "value4": {
+                  "string": "SINE IN"
+                },
+                "value5": {
+                  "string": "SINE OUT"
+                },
+                "value6": {
+                  "string": "SINE IN SINE OUT"
+                },
+                "value7": {
+                  "string": "ELASTIC IN"
+                },
+                "value8": {
+                  "string": "ELASTIC OUT"
+                },
+                "value9": {
+                  "string": "ELASTIC IN ELASTIC OUT"
+                },
+                "value10": {
+                  "string": "BOUNCE IN"
+                },
+                "value11": {
+                  "string": "BOUNCE OUT"
+                },
+                "value12": {
+                  "string": "BOUNCE IN BOUNCE OUT"
+                }
+              }
+            },
+            "15) Camera backward type out": {
+              "keyedArchive": {
+                "count": {
+                  "int32": 13
+                },
+                "selected": {
+                  "int32": 2
+                },
+                "type": {
+                  "string": "combo"
+                },
+                "value0": {
+                  "string": "LINEAR"
+                },
+                "value1": {
+                  "string": "EASE IN"
+                },
+                "value2": {
+                  "string": "EASE OUT"
+                },
+                "value3": {
+                  "string": "EASE IN EASY OUT"
+                },
+                "value4": {
+                  "string": "SINE IN"
+                },
+                "value5": {
+                  "string": "SINE OUT"
+                },
+                "value6": {
+                  "string": "SINE IN SINE OUT"
+                },
+                "value7": {
+                  "string": "ELASTIC IN"
+                },
+                "value8": {
+                  "string": "ELASTIC OUT"
+                },
+                "value9": {
+                  "string": "ELASTIC IN ELASTIC OUT"
+                },
+                "value10": {
+                  "string": "BOUNCE IN"
+                },
+                "value11": {
+                  "string": "BOUNCE OUT"
+                },
+                "value12": {
+                  "string": "BOUNCE IN BOUNCE OUT"
+                }
+              }
+            },
+            "16) Camera backward time in": {
+              "keyedArchive": {
+                "max": {
+                  "float": 5
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "17) Camera backward time out": {
+              "keyedArchive": {
+                "max": {
+                  "float": 5
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "18) Camera backward delay time in": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 0.7
+                }
+              }
+            },
+            "19) Camera backward delay time out": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 0.1
+                }
+              }
+            },
+            "20) Save camera backward values to yaml": {
+              "keyedArchive": {
+                "value": {
+                  "bool": false
+                }
+              }
+            }
+          }
+        },
+        "Camera Adjustments": {
+          "keyedArchive": {
+            "1) Deviation - delay (s)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 3
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 0.7
+                }
+              }
+            },
+            "2) Deviation - angle modifier": {
+              "keyedArchive": {
+                "max": {
+                  "float": 5
+                },
+                "min": {
+                  "float": 0.1
+                },
+                "value": {
+                  "float": 2
+                }
+              }
+            },
+            "3) Auto aim - delay (s)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 3
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "4) Auto aim - angle modifier": {
+              "keyedArchive": {
+                "max": {
+                  "float": 5
+                },
+                "min": {
+                  "float": 0.1
+                },
+                "value": {
+                  "float": 0.5
+                }
+              }
+            },
+            "5) By hull - delay (s)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 3
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 1.2
+                }
+              }
+            },
+            "6) By hull - angle modifier": {
+              "keyedArchive": {
+                "max": {
+                  "float": 5
+                },
+                "min": {
+                  "float": 0.1
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            }
+          }
+        },
+        "Camera fixed positions": {
+          "keyedArchive": {
+            "1) Arcade": {
+              "keyedArchive": {
+                "max": {
+                  "float": 40
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 19
+                }
+              }
+            },
+            "2) Sniper": {
+              "keyedArchive": {
+                "max": {
+                  "float": 40
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 20
+                }
+              }
+            }
+          }
+        },
+        "Joypad dissected": {
+          "keyedArchive": {
+            "Draw sectors": {
+              "keyedArchive": {
+                "value": {
+                  "bool": false
+                }
+              }
+            },
+            "Hor slide length to switch": {
+              "keyedArchive": {
+                "max": {
+                  "float": 60
+                },
+                "min": {
+                  "float": 5
+                },
+                "value": {
+                  "int32": 50
+                }
+              }
+            },
+            "Sector division angle": {
+              "keyedArchive": {
+                "max": {
+                  "float": 80
+                },
+                "min": {
+                  "float": 10
+                },
+                "value": {
+                  "int32": 30
+                }
+              }
+            },
+            "Central sector width": {
+              "keyedArchive": {
+                "max": {
+                  "float": 80
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "int32": 10
+                }
+              }
+            },
+            "Vert movement limit": {
+              "keyedArchive": {
+                "max": {
+                  "float": 400
+                },
+                "min": {
+                  "float": 10
+                },
+                "value": {
+                  "int32": 30
+                }
+              }
+            },
+            "Activation slide length": {
+              "keyedArchive": {
+                "max": {
+                  "float": 200
+                },
+                "min": {
+                  "float": 2
+                },
+                "value": {
+                  "int32": 12
+                }
+              }
+            },
+            "Shift from finger down": {
+              "keyedArchive": {
+                "max": {
+                  "float": 200
+                },
+                "min": {
+                  "float": -200
+                },
+                "value": {
+                  "int32": 80
+                }
+              }
+            },
+            "Shift from finger up": {
+              "keyedArchive": {
+                "max": {
+                  "float": 200
+                },
+                "min": {
+                  "float": -200
+                },
+                "value": {
+                  "int32": 80
+                }
+              }
+            },
+            "Max scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 100
+                },
+                "min": {
+                  "float": 40
+                },
+                "value": {
+                  "int32": 100
+                }
+              }
+            },
+            "Move joystick": {
+              "keyedArchive": {
+                "value": {
+                  "bool": false
+                }
+              }
+            },
+            "Fixed speed": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Hor slide length for U-Turn": {
+              "keyedArchive": {
+                "max": {
+                  "float": 60
+                },
+                "min": {
+                  "float": 5
+                },
+                "value": {
+                  "int32": 12
+                }
+              }
+            }
+          }
+        },
+        "Touch Sensitivity": {
+          "keyedArchive": {
+            "1) Sensitivity base": {
+              "keyedArchive": {
+                "max": {
+                  "float": 10
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 6.2
+                }
+              }
+            },
+            "2) Sensitivity accel mod": {
+              "keyedArchive": {
+                "max": {
+                  "float": 10
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 5
+                }
+              }
+            },
+            "3) Sensitivity base (sniper)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 10
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 4.3
+                }
+              }
+            },
+            "4) Sensitivity accel mod (sniper)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 10
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 5
+                }
+              }
+            },
+            "5) Sensitivity base (free cam)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 20
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 13
+                }
+              }
+            },
+            "6) Sensitivity accel mod (free cam)": {
+              "keyedArchive": {
+                "max": {
+                  "float": 10
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 5
+                }
+              }
+            },
+            "5) Sensitivity analog joystick": {
+              "keyedArchive": {
+                "max": {
+                  "float": 30
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 5
+                }
+              }
+            }
+          }
+        },
+        "HUD": {
+          "keyedArchive": {
+            "Health bar scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Damaged modules scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Menu button scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Chat button scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Chat menu buttons vertical offset": {
+              "keyedArchive": {
+                "max": {
+                  "float": 100
+                },
+                "min": {
+                  "float": 0
+                },
+                "value": {
+                  "float": 0
+                }
+              }
+            },
+            "Battle tutorial comment font size": {
+              "keyedArchive": {
+                "max": {
+                  "float": 40
+                },
+                "min": {
+                  "float": 10
+                },
+                "value": {
+                  "float": 21
+                }
+              }
+            },
+            "Speedometer vertical offset": {
+              "keyedArchive": {
+                "max": {
+                  "float": 50
+                },
+                "min": {
+                  "float": -50
+                },
+                "value": {
+                  "float": 0
+                }
+              }
+            }
+          }
+        },
+        "Damaged modules": {
+          "keyedArchive": {
+            "Text notifications vertical offset": {
+              "keyedArchive": {
+                "max": {
+                  "float": 50
+                },
+                "min": {
+                  "float": -50
+                },
+                "value": {
+                  "float": 0
+                }
+              }
+            }
+          }
+        },
+        "Equipment control": {
+          "keyedArchive": {
+            "Text size": {
+              "keyedArchive": {
+                "max": {
+                  "float": 40
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 18
+                }
+              }
+            }
+          }
+        },
+        "Ammo control": {
+          "keyedArchive": {
+            "Text size": {
+              "keyedArchive": {
+                "max": {
+                  "float": 18
+                },
+                "min": {
+                  "float": 13
+                },
+                "value": {
+                  "float": 13
+                }
+              }
+            }
+          }
+        },
+        "Scalable Controls": {
+          "keyedArchive": {
+            "Allow control scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Allow joypad scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max joypad scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.4
+                }
+              }
+            },
+            "Min joypad scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default joypad scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.4
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.0687
+                }
+              }
+            },
+            "Allow shoot button scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max shoot button scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min shoot button scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default shoot button scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.03
+                }
+              }
+            },
+            "Allow sniper button scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max sniper button scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min sniper button scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default sniper button scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Allow free camera scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max free camera scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min free camera scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default free camera scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Allow tank direction scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max tank direction scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min tank direction scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default tank direction scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Allow equipment control scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max equipment control scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min equipment control scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default equipment control scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.15
+                }
+              }
+            },
+            "Allow ammo control scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max ammo control scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min ammo control scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default ammo control scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.2181
+                }
+              }
+            },
+            "Allow follow aim switch scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max follow aim switch scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min follow aim switch scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default follow aim switch scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.104
+                }
+              }
+            },
+            "Allow fast commands scaling": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max fast commands scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.2
+                }
+              }
+            },
+            "Min fast commands scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default fast commands scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Allow cancel direct shoot scale": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max cancel direct shoot scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min cancel direct shoot scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default cancel direct shoot scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Allow damage statistics scale": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max damage statistics scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min damage statistics scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default damage statistics scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Allow battle ribbon scale": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Max battle ribbon scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 1
+                },
+                "value": {
+                  "float": 1.5
+                }
+              }
+            },
+            "Min battle ribbon scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 0.8
+                }
+              }
+            },
+            "Default battle ribbon scale": {
+              "keyedArchive": {
+                "max": {
+                  "float": 1.5
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            }
+          }
+        },
+        "Fast commands": {
+          "keyedArchive": {
+            "Attach to Damage Modules": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Marker speed coefficient": {
+              "keyedArchive": {
+                "max": {
+                  "float": 2
+                },
+                "min": {
+                  "float": 0.5
+                },
+                "value": {
+                  "float": 1
+                }
+              }
+            },
+            "Show joystick marker in command bar": {
+              "keyedArchive": {
+                "value": {
+                  "bool": true
+                }
+              }
+            },
+            "Ratio InputArea to Button": {
+              "keyedArchive": {
+                "max": {
+                  "float": 3
+                },
+                "min": {
+                  "float": 1.2
+                },
+                "value": {
+                  "float": 1.4
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
-  public getGroupNames(sectionName: string) {
-    return Object.keys(this.getDefaultDevOptions()?.keyedArchive?.[sectionName]?.keyedArchive);
+  public getSectionNames(options: any) {
+    return Object.keys(options?.keyedArchive);
   }
 
-  public getPropertiesNames(sectionName: string, groupName: string) {
-    return Object.keys(this.getDefaultDevOptions()?.keyedArchive?.[sectionName]?.keyedArchive?.[groupName]?.keyedArchive);
+  public getGroupNames(options: any, sectionName: string) {
+    return Object.keys(options?.keyedArchive?.[sectionName]?.keyedArchive);
   }
 
-  public getPropertyType(sectionName: string, groupName: string, propertyName: string) {
-    return Object.keys(this.getDefaultDevOptions()?.keyedArchive?.[sectionName]?.keyedArchive?.[groupName]?.keyedArchive?.[propertyName])[0];
+  public getPropertiesNames(options: any, sectionName: string, groupName: string) {
+    return Object.keys(options?.keyedArchive?.[sectionName]?.keyedArchive?.[groupName]?.keyedArchive);
   }
 
-  public getPropertyValue(sectionName: string, groupName: string, propertyName: string) {
-    return Object.values(this.getDefaultDevOptions()?.keyedArchive?.[sectionName]?.keyedArchive?.[groupName]?.keyedArchive?.[propertyName])[0];
+  public getPropertyType(options: any, sectionName: string, groupName: string, propertyName: string) {
+    return Object.keys(options?.keyedArchive?.[sectionName]?.keyedArchive?.[groupName]?.keyedArchive?.[propertyName])[0];
   }
 
-  public setPropertyValue(devOptions: any, sectionName: string, groupName: string, propertyName: string, value: any) {
-    const property = devOptions?.keyedArchive?.[sectionName]?.keyedArchive?.[groupName]?.keyedArchive?.[propertyName];
+  public getPropertyValue(options: any, sectionName: string, groupName: string, propertyName: string) {
+    return Object.values(options?.keyedArchive?.[sectionName]?.keyedArchive?.[groupName]?.keyedArchive?.[propertyName])[0];
+  }
+
+  public setPropertyValue(options: any, sectionName: string, groupName: string, propertyName: string, value: any) {
+    const property = options?.keyedArchive?.[sectionName]?.keyedArchive?.[groupName]?.keyedArchive?.[propertyName];
 
     if (property) {
       const key = Object.keys(property)[0];
       property[key] = value;
     }
+  }
+
+  public getFormControlName(optionsType: string, sectionName: string, groupName: string, propertyName: string) {
+    let result = `${optionsType}_${sectionName}_${groupName}_${propertyName}`;
+    const charsReplaced = [" ", ".", ":", ";", "(", ")"]
+    charsReplaced.forEach((char) => {
+      result = result.replaceAll(char, "_");
+    })
+    return result;
   }
 }

@@ -1,1 +1,50 @@
-<app-dev-options-page></app-dev-options-page>
+<div class="w-100 h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-[520px] h-[80vh] bg-[#262B2F] border border-[#3A4650] border-2 shadow-lg rounded-lg flex flex-col">
+    <div class="flex border-b border-[#3A4650]">
+      <button
+        (click)="activeTab = 'optionsGlobal'"
+        [class.bg-[#3A4650]]="activeTab === 'optionsGlobal'"
+        [class.text-white]="activeTab === 'optionsGlobal'"
+        [class.text-[#7A8A96]]="activeTab !== 'optionsGlobal'"
+        class="flex-1 py-3 text-sm uppercase font-bold tracking-wide transition">
+        Options Global
+      </button>
+      <button
+        (click)="activeTab = 'optionsDevice'"
+        [class.bg-[#3A4650]]="activeTab === 'optionsDevice'"
+        [class.text-white]="activeTab === 'optionsDevice'"
+        [class.text-[#7A8A96]]="activeTab !== 'optionsDevice'"
+        class="flex-1 py-3 text-sm uppercase font-bold tracking-wide transition">
+        Options Device
+      </button>
+    </div>
+    <div class="flex-1 p-4 overflow-auto text-white">
+      @switch (activeTab) {
+        @case ('optionsGlobal') {
+          <app-options-global
+            [optionsGlobal]="optionsGlobal"
+            (optionsGlobalChange)="onOptionsGlobalChange($event)"
+          ></app-options-global>
+        }
+        @case ('optionsDevice') {
+          <app-options-device
+            [optionsDevice]="optionsDevice"
+            (optionsDeviceChange)="onOptionsDeviceChange($event)"
+          ></app-options-device>
+        }
+      }
+    </div>
+    <div class="p-4 border-t border-[#3A4650] flex gap-4">
+      <button
+        (click)="onLoadClicked()"
+        class="flex-1 bg-gradient-to-b from-[#4B555F] to-[#3A4650] text-white text-xl uppercase font-bold px-4 py-2 rounded hover:brightness-110 transition">
+        Load
+      </button>
+      <button
+        (click)="onSaveClicked()"
+        class="flex-1 bg-gradient-to-b from-[#4B555F] to-[#3A4650] text-white text-xl uppercase font-bold px-4 py-2 rounded hover:brightness-110 transition">
+        Save
+      </button>
+    </div>
+  </div>
+</div>

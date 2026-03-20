@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DevOptionsContent } from './dev-options-content';
+import { OptionsGlobalComponent } from './options-global';
 
-describe('DevOptionsContent', () => {
-  let component: DevOptionsContent;
-  let fixture: ComponentFixture<DevOptionsContent>;
+describe('OptionsGlobalComponent', () => {
+  let component: OptionsGlobalComponent;
+  let fixture: ComponentFixture<OptionsGlobalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DevOptionsContent],
+      imports: [OptionsGlobalComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DevOptionsContent);
+    fixture = TestBed.createComponent(OptionsGlobalComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

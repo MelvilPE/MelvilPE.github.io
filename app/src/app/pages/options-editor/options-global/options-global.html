@@ -1,0 +1,105 @@
+@if (init) {
+  <div class="dev-options-content flex flex-col gap-1.5">
+  @for (sectionName of getSectionNames(); track sectionName) {
+    <div class="rounded-lg overflow-hidden border border-[#3A4650] bg-[#262B2F]">
+      <button
+        class="w-full flex items-center justify-between px-4 py-2.5 text-xs font-bold tracking-widest uppercase transition-colors hover:bg-[#2E363C]"
+        [class.bg-[#2E363C]]="openSection === sectionName"
+        [class.border-b]="openSection === sectionName"
+        [class.border-[#3A4650]]="openSection === sectionName"
+        (click)="toggleSection(sectionName)"
+      >
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full"
+            [class.bg-[#4E9EBC]]="openSection === sectionName"
+            [class.bg-[#3A4650]]="openSection !== sectionName">
+          </span>
+          <span class="text-[#E8EEF2]">{{ sectionName }}</span>
+        </span>
+        <svg class="w-3.5 h-3.5 text-[#8FA4B2] transition-transform duration-200 shrink-0"
+          [class.rotate-180]="openSection === sectionName"
+          viewBox="0 0 16 16" fill="none">
+          <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      @if (openSection === sectionName) {
+        <div class="p-2 flex flex-col gap-1.5 bg-[#262B2F]">
+          @for (groupName of getGroupNames(sectionName); track groupName) {
+            <div class="rounded-md overflow-hidden border border-[#3A4650] bg-[#2E363C]">
+              <button
+                class="w-full flex items-center justify-between px-3 py-2 text-[11px] font-medium tracking-wider uppercase transition-colors hover:bg-[#38444C] hover:text-[#E8EEF2]"
+                [class.bg-[#38444C]]="openGroup === sectionName + '/' + groupName"
+                [class.text-[#E8EEF2]]="openGroup === sectionName + '/' + groupName"
+                [class.text-[#8FA4B2]]="openGroup !== sectionName + '/' + groupName"
+                [class.border-b]="openGroup === sectionName + '/' + groupName"
+                [class.border-[#3A4650]]="openGroup === sectionName + '/' + groupName"
+                (click)="toggleGroup(sectionName, groupName)"
+              >
+                <span>{{ groupName }}</span>
+                <svg class="w-3 h-3 text-[#5C7080] transition-transform duration-200 shrink-0"
+                  [class.rotate-180]="openGroup === sectionName + '/' + groupName"
+                  viewBox="0 0 16 16" fill="none">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              @if (openGroup === sectionName + '/' + groupName) {
+                <div class="px-3 py-2.5 flex flex-col gap-3 bg-[#2E363C]">
+                  @for (propertyName of getPropertiesNames(sectionName, groupName); track propertyName) {
+                    <div>
+                      <div class="flex items-center justify-between mb-1.5">
+                        <span class="text-[11px] font-semibold tracking-wider uppercase text-[#8FA4B2]">
+                          {{ propertyName }}
+                        </span>
+                        <span class="text-[10px] text-[#5C7080] bg-[#38444C] border border-[#3A4650] px-1.5 py-0.5 rounded">
+                          {{ getPropertyType(sectionName, groupName, propertyName) }}
+                        </span>
+                      </div>
+                      @switch(getPropertyType(sectionName, groupName, propertyName)) {
+                        @case("bool") {
+                          <app-input-checkbox
+                            [formGroup]="form"
+                            [controlName]="getFormControlName(sectionName, groupName, propertyName)"
+                            class="block">
+                          </app-input-checkbox>
+                        }
+                        @case("string") {
+                          <app-input-text
+                            [formGroup]="form"
+                            [controlName]="getFormControlName(sectionName, groupName, propertyName)"
+                            class="block">
+                          </app-input-text>
+                        }
+                        @case("int32") {
+                          <app-input-number
+                            [formGroup]="form"
+                            [controlName]="getFormControlName(sectionName, groupName, propertyName)"
+                            class="block">
+                          </app-input-number>
+                        }
+                        @case("float") {
+                          <app-input-number
+                            [formGroup]="form"
+                            [controlName]="getFormControlName(sectionName, groupName, propertyName)"
+                            class="block">
+                          </app-input-number>
+                        }
+                        @case("Color") {
+                          <app-input-color
+                            [formGroup]="form"
+                            [controlName]="getFormControlName(sectionName, groupName, propertyName)"
+                            class="block">
+                          </app-input-color>
+                        }
+                      }
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>
+}

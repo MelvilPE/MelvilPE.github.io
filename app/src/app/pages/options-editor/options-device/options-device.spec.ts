@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DevOptionsPage } from './dev-options-page';
+import { OptionsDeviceComponent } from './options-device';
 
-describe('DevOptionsPage', () => {
-  let component: DevOptionsPage;
-  let fixture: ComponentFixture<DevOptionsPage>;
+describe('OptionsDevice', () => {
+  let component: OptionsDeviceComponent;
+  let fixture: ComponentFixture<OptionsDeviceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DevOptionsPage],
+      imports: [OptionsDeviceComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DevOptionsPage);
+    fixture = TestBed.createComponent(OptionsDeviceComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

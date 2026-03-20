@@ -1,22 +1,22 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { InputNumber } from './../../../../components/input-number/input-number';
-import { InputCheckbox } from './../../../../components/input-checkbox/input-checkbox';
-import { InputColor } from './../../../../components/input-color/input-color';
-import { InputText } from './../../../../components/input-text/input-text';
-import { ConstantsService } from './../../../../services/constants/constants.service';
+import { InputNumber } from '../../../components/input-number/input-number';
+import { InputCheckbox } from '../../../components/input-checkbox/input-checkbox';
+import { InputColor } from '../../../components/input-color/input-color';
+import { InputText } from '../../../components/input-text/input-text';
+import { ConstantsService } from '../../../services/constants/constants.service';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SubSink } from 'subsink';
 
 @Component({
-  selector: 'app-dev-options-content',
+  selector: 'app-options-global',
   imports: [CommonModule, FormsModule, ReactiveFormsModule, InputNumber, InputCheckbox, InputColor, InputText],
-  templateUrl: './dev-options-content.html',
-  styleUrl: './dev-options-content.scss',
+  templateUrl: './options-global.html',
+  styleUrl: './options-global.scss',
 })
-export class DevOptionsContent {
-  @Input() devOptions: any;
-  @Output() devOptionsChange = new EventEmitter<any>();
+export class OptionsGlobalComponent {
+  @Input() optionsGlobal: any;
+  @Output() optionsGlobalChange = new EventEmitter<any>();
 
   public openSection: string | null = null;
   public openGroup: string | null = null;
@@ -59,7 +59,7 @@ export class DevOptionsContent {
           this.subsSink.sink = formControl.valueChanges.subscribe((value) => {
             if (value !== null) {
               this.setPropertyValue(sectionName, groupName, propertyName, value);
-              this.devOptionsChange.emit(this.devOptions);
+              this.optionsGlobalChange.emit(this.optionsGlobal);
             }
           });
         });
@@ -70,32 +70,27 @@ export class DevOptionsContent {
   }
 
   public getSectionNames() {
-    return this.constantsService.getSectionNames();
+    return this.constantsService.getSectionNames(this.optionsGlobal);
   }
 
   public getGroupNames(sectionName: string) {
-    return this.constantsService.getGroupNames(sectionName);
+    return this.constantsService.getGroupNames(this.optionsGlobal, sectionName);
   }
 
   public getPropertiesNames(sectionName: string, groupName: string) {
-    return this.constantsService.getPropertiesNames(sectionName, groupName);
+    return this.constantsService.getPropertiesNames(this.optionsGlobal, sectionName, groupName);
   }
 
   public getPropertyType(sectionName: string, groupName: string, propertyName: string) {
-    return this.constantsService.getPropertyType(sectionName, groupName, propertyName);
+    return this.constantsService.getPropertyType(this.optionsGlobal, sectionName, groupName, propertyName);
   }
 
   public getPropertyValue(sectionName: string, groupName: string, propertyName: string) {
-    return this.constantsService.getPropertyValue(sectionName, groupName, propertyName);
+    return this.constantsService.getPropertyValue(this.optionsGlobal, sectionName, groupName, propertyName);
   }
 
   public getFormControlName(sectionName: string, groupName: string, propertyName: string): string {
-    let result = `${sectionName}_${groupName}_${propertyName}`;
-    const charsReplaced = [" ", ".", ":", ";", "(", ")"]
-    charsReplaced.forEach((char) => {
-      result = result.replaceAll(char, "_");
-    })
-    return result;
+    return this.constantsService.getFormControlName("optionsGlobal", sectionName, groupName, propertyName);
   }
 
   public toggleSection(sectionName: string): void {
@@ -109,6 +104,6 @@ export class DevOptionsContent {
   }
 
   private setPropertyValue(sectionName: string, groupName: string, propertyName: string, value: any) {
-    return this.constantsService.setPropertyValue(this.devOptions, sectionName, groupName, propertyName, value);
+    return this.constantsService.setPropertyValue(this.optionsGlobal, sectionName, groupName, propertyName, value);
   }
 }
