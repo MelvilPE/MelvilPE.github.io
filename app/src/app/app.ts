@@ -12,7 +12,11 @@ export class App {
 
   public isMobileMenuOpen = false;
 
-  toggleMobileMenu() {
+  public toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  public getCurrentYear() {
+    return new Date().getFullYear();
   }
 }
