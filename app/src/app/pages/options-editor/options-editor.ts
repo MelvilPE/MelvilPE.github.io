@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef  } from '@angular/core';
 import { OptionsGlobalComponent } from './options-global/options-global';
 import { OptionsDeviceComponent } from './options-device/options-device';
 import { ConstantsService } from './../../services/constants/constants.service';
@@ -16,7 +16,7 @@ export class OptionsEditor {
   public optionsGlobal: any;
   public optionsDevice: any;
 
-  constructor(private constantsService: ConstantsService) {
+  constructor(private cdr: ChangeDetectorRef, private constantsService: ConstantsService) {
     this.optionsGlobal = constantsService.getDefaultOptionsGlobal();
     this.optionsDevice = constantsService.getDefaultOptionsDevice();
   }
@@ -46,6 +46,7 @@ export class OptionsEditor {
         } else {
           this.optionsDevice = yaml.load(content);
         }
+        this.cdr.detectChanges();
       };
       reader.readAsText(file);
     };
