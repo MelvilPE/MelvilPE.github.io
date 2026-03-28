@@ -2,12 +2,16 @@
   <input
     [formControl]="getControl()"
     type="number"
-    placeholder="Entrer un nombre"
-    class="w-full bg-[#38444C] border border-[#3A4650] rounded-md px-3 py-1.5
+    placeholder="Enter a number here"
+    class="w-full bg-[#38444C] border rounded-md px-3 py-1.5
            text-xs text-[#E8EEF2] placeholder-[#5C7080]
-           focus:outline-none focus:ring-1 focus:ring-[#4E9EBC]
-           focus:border-[#4E9EBC] transition-colors
+           focus:outline-none focus:ring-1 transition-colors
            [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+    [class.border-red-500]="getControl().invalid && (getControl().dirty || getControl().touched)"
+    [class.focus:ring-red-500]="getControl().invalid && (getControl().dirty || getControl().touched)"
+    [class.border-[#3A4650]]="!(getControl().invalid && (getControl().dirty || getControl().touched))"
+    [class.focus:ring-[#4E9EBC]]="!(getControl().invalid && (getControl().dirty || getControl().touched))"
+    [class.focus:border-[#4E9EBC]]="!(getControl().invalid && (getControl().dirty || getControl().touched))"
     step="1"
   />
 </div>
