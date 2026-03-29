@@ -8,6 +8,7 @@
         <a routerLink="/home" class="hover:text-purple-400 transition">Home</a>
         <a routerLink="/documentation" class="hover:text-purple-400 transition">Documentation</a>
         <a routerLink="/options-editor" class="hover:text-purple-400 transition">Options Editor</a>
+        <a routerLink="/versions" class="hover:text-purple-400 transition">Versions</a>
         <a href="https://discord.gg/FS9uTTnab7"
           target="_blank"
           class="bg-purple-500 hover:bg-purple-700 px-4 py-2 rounded-lg transition">
@@ -36,6 +37,11 @@
         (click)="isMobileMenuOpen = false; $event.stopPropagation()"
         class="block hover:text-purple-400">
         Options Editor
+      </a>
+      <a routerLink="/versions"
+        (click)="isMobileMenuOpen = false; $event.stopPropagation()"
+        class="block hover:text-purple-400">
+        Versions
       </a>
       <a href="https://discord.gg/FS9uTTnab7"
         target="_blank"

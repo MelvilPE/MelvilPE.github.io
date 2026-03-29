@@ -1,0 +1,68 @@
+<body class="bg-[#1b0a2e] text-white min-h-screen">
+  <section class="pt-40 pb-12 text-center bg-gradient-to-br from-[#1b0a2e] to-[#3b1571]">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-extrabold">
+        Game versions
+      </h1>
+      <p class="mt-6 text-gray-300 text-lg">
+        All versions that have been tracked are here.
+      </p>
+    </div>
+  </section>
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <!--
+      <div class="flex flex-wrap gap-4 mb-8 items-center justify-between">
+        <div class="flex gap-3 flex-wrap">
+          <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm transition">All</button>
+          <button class="bg-[#1b1130] hover:bg-purple-900 border border-purple-900 px-4 py-2 rounded-lg text-sm transition">Android</button>
+          <button class="bg-[#1b1130] hover:bg-purple-900 border border-purple-900 px-4 py-2 rounded-lg text-sm transition">iOS</button>
+          <button class="bg-[#1b1130] hover:bg-purple-900 border border-purple-900 px-4 py-2 rounded-lg text-sm transition">PC</button>
+        </div>
+        <input
+          type="text"
+          placeholder="Search version..."
+          class="bg-[#1b1130] border border-purple-900 text-white placeholder-gray-500 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-purple-500 w-56"
+        />
+      </div>
+      -->
+      <div class="overflow-x-auto rounded-2xl border border-purple-900/40">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-[#1b1130] text-purple-300 uppercase text-xs tracking-widest">
+              <th class="px-6 py-4">Version</th>
+              <th class="px-6 py-4">Source</th>
+              <th class="px-6 py-4">Platform</th>
+              <th class="px-6 py-4">Found Date</th>
+              <th class="px-6 py-4">Upload Date</th>
+              <th class="px-6 py-4 text-center">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-purple-900/30">
+            <tr class="bg-[#110820] hover:bg-[#1b1130] transition">
+              <td class="px-6 py-5">
+                <span class="font-bold text-white text-base">10.0.0</span>
+              </td>
+              <td class="px-6 py-5 text-gray-300">WGC</td>
+              <td class="px-6 py-5 text-gray-300">Windows</td>
+              <td class="px-6 py-5 text-gray-400 font-mono text-xs">2024-11-03</td>
+              <td class="px-6 py-5 text-gray-400 font-mono text-xs">2024-11-05</td>
+              <td class="px-6 py-5 text-center">
+                <span class="bg-green-900/40 text-green-400 text-xs px-3 py-1 rounded-full border border-green-700/40">Available</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--
+      <div class="flex justify-center gap-2 mt-8">
+        <button class="bg-[#1b1130] hover:bg-purple-900 border border-purple-900 px-4 py-2 rounded-lg text-sm transition text-gray-400">← Prev</button>
+        <button class="bg-purple-600 px-4 py-2 rounded-lg text-sm">1</button>
+        <button class="bg-[#1b1130] hover:bg-purple-900 border border-purple-900 px-4 py-2 rounded-lg text-sm transition">2</button>
+        <button class="bg-[#1b1130] hover:bg-purple-900 border border-purple-900 px-4 py-2 rounded-lg text-sm transition">3</button>
+        <button class="bg-[#1b1130] hover:bg-purple-900 border border-purple-900 px-4 py-2 rounded-lg text-sm transition text-gray-400">Next →</button>
+      </div>
+      -->
+    </div>
+  </section>
+</body>

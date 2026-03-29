@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Documentation } from './pages/documentation/documentation';
 import { OptionsEditor } from './pages/options-editor/options-editor';
+import { Versions } from './pages/versions/versions';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'options-editor',
     component: OptionsEditor,
+  },
+  {
+    path: 'versions',
+    component: Versions,
   }
 ];
