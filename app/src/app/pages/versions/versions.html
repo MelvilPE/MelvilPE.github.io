@@ -40,19 +40,28 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-purple-900/30">
-            <tr class="bg-[#110820] hover:bg-[#1b1130] transition">
-              <td class="px-6 py-5 text-center"><span class="font-bold text-white text-base">10.0.0</span></td>
-              <td class="px-6 py-5 text-gray-300 text-center">WGC</td>
-              <td class="px-6 py-5 text-gray-300 text-center">WINDOWS</td>
-              <td class="px-6 py-5 text-gray-300 text-center">PRODUCTION</td>
-              <td class="px-6 py-5 text-gray-400 font-mono text-xs text-center">2024-11-03</td>
-              <td class="px-6 py-5 text-gray-400 font-mono text-xs text-center">2024-11-05</td>
+            @for (version of versions; track $index) {
+              <tr class="bg-[#110820] hover:bg-[#1b1130] transition">
+                <td class="px-6 py-5 text-center"><span class="font-bold text-white text-base">{{ version.version }}</span></td>
+                <td class="px-6 py-5 text-gray-300 text-center">{{ version.source }}</td>
+                <td class="px-6 py-5 text-gray-300 text-center">{{ version.platform }}</td>
+                <td class="px-6 py-5 text-gray-300 text-center">{{ version.type_client }}</td>
+                <td class="px-6 py-5 text-gray-400 font-mono text-xs text-center">{{ version.upload_date | date:'dd/MM/yyyy' }}</td>
+                <td class="px-6 py-5 text-gray-400 font-mono text-xs text-center">
+                  @if (version.upload_server_date) {
+                    {{ version.upload_server_date | date:'dd/MM/yyyy' }}
+                  } @else {
+                    UNKNOWN
+                  }
+                </td>
+              </tr>
               <!--
               <td class="px-6 py-5 text-center">
                 <span class="bg-green-900/40 text-green-400 text-xs px-3 py-1 rounded-full border border-green-700/40">Available</span>
               </td>
               -->
-            </tr>
+            }
+
           </tbody>
         </table>
       </div>
