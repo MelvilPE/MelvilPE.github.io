@@ -12,6 +12,9 @@ import { SubSink } from 'subsink';
 export class Versions {
   public versions: any[] = [];
 
+  public isLoading = true;
+  public hasFailed = false;
+
   private subsSink = new SubSink();
 
   constructor(
@@ -23,10 +26,14 @@ export class Versions {
     this.subsSink.sink = this.versionsService.getVersionsList().subscribe({
       next: (data) => {
         this.versions = data;
+        this.isLoading = false;
         this.cdr.detectChanges();
       },
       error: (err) => {
+        this.hasFailed = true;
         console.error('API error:', err);
+        this.isLoading = false;
+        this.cdr.detectChanges();
       },
     });
   }
