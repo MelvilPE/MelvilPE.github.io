@@ -22,6 +22,8 @@
         <a (click)="scrollTo('resource-dlc')" class="block hover:text-purple-400 cursor-pointer">ResourceDLC</a>
         <a (click)="scrollTo('resource-dvpl')" class="block hover:text-purple-400 cursor-pointer">ResourceDVPL</a>
         <a (click)="scrollTo('options-editor')" class="block hover:text-purple-400 cursor-pointer">Options Editor</a>
+        <a (click)="scrollTo('versions')" class="block hover:text-purple-400 cursor-pointer">Versions</a>
+        <a (click)="scrollTo('slow')" class="block hover:text-purple-400 cursor-pointer">Versions</a>
         <a (click)="scrollTo('downloads')" class="block hover:text-purple-400 cursor-pointer">Downloads</a>
       </div>
     </div>
@@ -169,6 +171,72 @@ keyedArchive:
           Make your changes in the interface, then export the updated YAML file.<br>
           Replace it in World Of Tanks Blitz/Data/optionsGlobal.yaml` or optionsDesktop.yaml.<br>Then delete the optionsGlobal.bin and optionsDesktop.bin files in the DAVAProject folder, along with any .bk files if present.<br><br>
           The game will regenerate the binary files with your new settings, applying the changes in-game.
+        </div>
+      </div>
+    </section>
+    <section id="versions" class="scroll-mt-24">
+      <h2 class="text-2xl font-bold text-purple-400">📘 Versions</h2>
+      <div class="mt-3 space-y-3">
+        <p>
+          This tab lists game versions automatically detected across multiple WG servers.
+          It aggregates available builds and their distribution sources.
+        </p>
+        <p>
+          We collect different information such as detected game versions, their origin source,
+          the platform, the client type, and the date since they became available.
+        </p>
+        <div class="mt-6 bg-[#20153f] border-l-4 border-purple-500 p-4 rounded-lg text-sm text-gray-300 space-y-2">
+          The system is somehow automated and only indexes metadata about available versions.<br><br>
+          The data is used purely for informational and tracking purposes, allowing users
+          to see version availability across different environments and updates.<br><br>
+          <strong>Disclaimer:</strong><br>
+          We do not store any download links for clients or partial game builds.<br>
+          This prevents any content leakage.<br>
+          All information is strictly informational and intended for version tracking only.
+        </div>
+      </div>
+    </section>
+    <section id="versions" class="scroll-mt-24">
+      <h2 class="text-2xl font-bold text-purple-400">📘 Versions</h2>
+      <div class="mt-3 space-y-3">
+        <p>
+          This tab lists game versions automatically detected across multiple WG servers.
+          It aggregates available builds and their distribution sources.
+        </p>
+        <p>
+          We collect different information such as detected game versions, their origin source,
+          the platform, the client type, and the date since they became available.
+        </p>
+        <div class="mt-6 bg-[#20153f] border-l-4 border-purple-500 p-4 rounded-lg text-sm text-gray-300 space-y-2">
+          The system is somehow automated and only indexes metadata about available versions.<br><br>
+          The data is used purely for informational and tracking purposes, allowing users
+          to see version availability across different environments and updates.<br><br>
+          <strong>Disclaimer:</strong><br>
+          We do not store any download links for clients or partial game builds.<br>
+          This prevents any content leakage.<br>
+          All information is strictly informational and intended for version tracking only.
+        </div>
+      </div>
+    </section>
+    <section id="slow" class="scroll-mt-24">
+      <h2 class="text-2xl font-bold text-purple-400">⏳ Slow Loading</h2>
+      <div class="mt-3 space-y-3">
+        <p>
+          Some parts of the website listed below may take longer to load, sometimes up to one full minute:
+        </p>
+        <ul class="list-disc list-inside text-gray-300 space-y-1">
+          <li>Versions</li>
+        </ul>
+        <p>
+          This is caused by the backend infrastructure, which is hosted on a free-tier service.
+          It requires an initial request to “wake up” the server, which can significantly increase the first load time.
+        </p>
+        <p>
+          This behavior is normal. However, if loading takes longer than expected, it may indicate a temporary issue.
+        </p>
+        <div class="mt-6 bg-[#20153f] border-l-4 border-purple-500 p-4 rounded-lg text-sm text-gray-300 space-y-2">
+          Once the backend is awakened, it remains active for approximately <strong>15 minutes</strong>,
+          allowing for fast and smooth subsequent requests during that period.
         </div>
       </div>
     </section>

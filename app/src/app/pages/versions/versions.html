@@ -9,12 +9,13 @@
       </p>
     </div>
   </section>
+
   <section class="py-20">
     <div class="max-w-6xl mx-auto px-4">
       @if (hasFailed) {
         <div class="flex flex-col items-center justify-center py-20">
           <div class="bg-[#1b1130] border border-purple-700 rounded-2xl p-8 text-center max-w-xl mx-auto shadow-lg shadow-purple-900/40">
-            <svg class="w-12 h-12 mx-auto mb-4 text-purple-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-12 h-12 mx-auto mb-4 text-purple-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-12.728 12.728M5.636 5.636l12.728 12.728"></path>
             </svg>
             <h2 class="text-2xl font-bold text-white mb-2">Oops ! Failed to load</h2>
@@ -37,38 +38,92 @@
           </div>
         } @else {
           <div class="overflow-x-auto rounded-2xl border border-purple-900/40">
-          <table class="w-full text-left text-sm">
-            <thead>
-              <tr class="bg-[#1b1130] text-purple-300 uppercase text-xs tracking-widest text-center">
-                <th class="px-6 py-4">VERSION</th>
-                <th class="px-6 py-4">SOURCE</th>
-                <th class="px-6 py-4">PLATFORM</th>
-                <th class="px-6 py-4">TYPE</th>
-                <th class="px-6 py-4">UPLOAD DATE</th>
-                <th class="px-6 py-4">UPLOAD SERVER DATE</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-purple-900/30">
-              @for (version of versions; track $index) {
-                <tr class="bg-[#110820] hover:bg-[#1b1130] transition">
-                  <td class="px-6 py-5 text-center"><span class="font-bold text-white text-base">{{ version.version }}</span></td>
-                  <td class="px-6 py-5 text-gray-300 text-center">{{ version.source }}</td>
-                  <td class="px-6 py-5 text-gray-300 text-center">{{ version.platform }}</td>
-                  <td class="px-6 py-5 text-gray-300 text-center">{{ version.type_client }}</td>
-                  <td class="px-6 py-5 text-gray-400 font-mono text-xs text-center">{{ version.upload_date | date:'dd/MM/yyyy' }}</td>
-                  <td class="px-6 py-5 text-gray-400 font-mono text-xs text-center">
-                    @if (version.upload_server_date) {
-                      {{ version.upload_server_date | date:'dd/MM/yyyy' }}
-                    } @else {
-                      UNKNOWN
-                    }
-                  </td>
-                </tr>
-              }
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="bg-[#1b1130] text-purple-300 uppercase text-xs tracking-widest text-center">
 
-            </tbody>
-          </table>
-        </div>
+                  <th class="px-6 py-4">
+                    <button (click)="sortBy('version')" class="flex items-center gap-1.5 mx-auto hover:text-white transition-colors group">
+                      <span>VERSION</span>
+                      <span class="flex flex-col gap-[2px]">
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'version' && sortDirection === 'asc'" [class.text-purple-600]="!(sortColumn === 'version' && sortDirection === 'asc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 0L8 5H0z"/></svg>
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'version' && sortDirection === 'desc'" [class.text-purple-600]="!(sortColumn === 'version' && sortDirection === 'desc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 5L0 0H8z"/></svg>
+                      </span>
+                    </button>
+                  </th>
+
+                  <th class="px-6 py-4">
+                    <button (click)="sortBy('source')" class="flex items-center gap-1.5 mx-auto hover:text-white transition-colors group">
+                      <span>SOURCE</span>
+                      <span class="flex flex-col gap-[2px]">
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'source' && sortDirection === 'asc'" [class.text-purple-600]="!(sortColumn === 'source' && sortDirection === 'asc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 0L8 5H0z"/></svg>
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'source' && sortDirection === 'desc'" [class.text-purple-600]="!(sortColumn === 'source' && sortDirection === 'desc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 5L0 0H8z"/></svg>
+                      </span>
+                    </button>
+                  </th>
+
+                  <th class="px-6 py-4">
+                    <button (click)="sortBy('platform')" class="flex items-center gap-1.5 mx-auto hover:text-white transition-colors group">
+                      <span>PLATFORM</span>
+                      <span class="flex flex-col gap-[2px]">
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'platform' && sortDirection === 'asc'" [class.text-purple-600]="!(sortColumn === 'platform' && sortDirection === 'asc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 0L8 5H0z"/></svg>
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'platform' && sortDirection === 'desc'" [class.text-purple-600]="!(sortColumn === 'platform' && sortDirection === 'desc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 5L0 0H8z"/></svg>
+                      </span>
+                    </button>
+                  </th>
+
+                  <th class="px-6 py-4">
+                    <button (click)="sortBy('type_client')" class="flex items-center gap-1.5 mx-auto hover:text-white transition-colors group">
+                      <span>TYPE</span>
+                      <span class="flex flex-col gap-[2px]">
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'type_client' && sortDirection === 'asc'" [class.text-purple-600]="!(sortColumn === 'type_client' && sortDirection === 'asc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 0L8 5H0z"/></svg>
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'type_client' && sortDirection === 'desc'" [class.text-purple-600]="!(sortColumn === 'type_client' && sortDirection === 'desc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 5L0 0H8z"/></svg>
+                      </span>
+                    </button>
+                  </th>
+
+                  <th class="px-6 py-4">
+                    <button (click)="sortBy('upload_date')" class="flex items-center gap-1.5 mx-auto hover:text-white transition-colors group">
+                      <span>UPLOAD DATE</span>
+                      <span class="flex flex-col gap-[2px]">
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'upload_date' && sortDirection === 'asc'" [class.text-purple-600]="!(sortColumn === 'upload_date' && sortDirection === 'asc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 0L8 5H0z"/></svg>
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'upload_date' && sortDirection === 'desc'" [class.text-purple-600]="!(sortColumn === 'upload_date' && sortDirection === 'desc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 5L0 0H8z"/></svg>
+                      </span>
+                    </button>
+                  </th>
+
+                  <th class="px-6 py-4">
+                    <button (click)="sortBy('upload_server_date')" class="flex items-center gap-1.5 mx-auto hover:text-white transition-colors group">
+                      <span>UPLOAD SERVER DATE</span>
+                      <span class="flex flex-col gap-[2px]">
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'upload_server_date' && sortDirection === 'asc'" [class.text-purple-600]="!(sortColumn === 'upload_server_date' && sortDirection === 'asc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 0L8 5H0z"/></svg>
+                        <svg class="w-2 h-2 transition-colors" [class.text-white]="sortColumn === 'upload_server_date' && sortDirection === 'desc'" [class.text-purple-600]="!(sortColumn === 'upload_server_date' && sortDirection === 'desc')" viewBox="0 0 8 5" fill="currentColor"><path d="M4 5L0 0H8z"/></svg>
+                      </span>
+                    </button>
+                  </th>
+
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-purple-900/30">
+                @for (version of sortedVersions; track $index) {
+                  <tr class="bg-[#110820] hover:bg-[#1b1130] transition">
+                    <td class="px-6 py-5 text-center"><span class="font-bold text-white text-base">{{ version.version }}</span></td>
+                    <td class="px-6 py-5 text-gray-300 text-center">{{ version.source }}</td>
+                    <td class="px-6 py-5 text-gray-300 text-center">{{ version.platform }}</td>
+                    <td class="px-6 py-5 text-gray-300 text-center">{{ version.type_client }}</td>
+                    <td class="px-6 py-5 text-gray-400 font-mono text-xs text-center">{{ version.upload_date | date:'dd/MM/yyyy' }}</td>
+                    <td class="px-6 py-5 text-gray-400 font-mono text-xs text-center">
+                      @if (version.upload_server_date) {
+                        {{ version.upload_server_date | date:'dd/MM/yyyy' }}
+                      } @else {
+                        UNKNOWN
+                      }
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
         }
       }
     </div>
