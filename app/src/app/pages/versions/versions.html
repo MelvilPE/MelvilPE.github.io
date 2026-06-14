@@ -31,9 +31,10 @@
       } @else {
         @if (isLoading) {
           <div class="flex flex-col items-center justify-center py-20">
-            <div class="flex flex-col items-center">
-              <div class="w-12 h-12 border-4 border-t-purple-600 border-b-purple-400 border-l-purple-700 border-r-purple-500 rounded-full animate-spin mb-4"></div>
-              <p class="text-purple-300 text-lg font-medium">Loading versions...</p>
+            <div class="bg-[#1b1130] border border-purple-700 rounded-2xl p-8 text-center max-w-xl mx-auto shadow-lg shadow-purple-900/40">
+              <div class="w-12 h-12 border-4 border-t-purple-600 border-b-purple-400 border-l-purple-700 border-r-purple-500 rounded-full animate-spin mx-auto mb-4"></div>
+              <h2 class="text-2xl font-bold text-white mb-2">Loading versions...</h2>
+              <p class="text-purple-300">This may take up to a minute, please wait.</p>
             </div>
           </div>
         } @else {
