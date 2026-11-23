@@ -1,0 +1,27 @@
+var class_d_a_v_a_1_1_text_layout =
+[
+    [ "TextLayout", "class_d_a_v_a_1_1_text_layout.html#a7e7f6f4c465ec0f43fc2963dd9c0ab4b", null ],
+    [ "TextLayout", "class_d_a_v_a_1_1_text_layout.html#a72649e4ee62b1e87e779b6c9c9488a6e", null ],
+    [ "~TextLayout", "class_d_a_v_a_1_1_text_layout.html#ad50118e1fd3937efd80d4636e2d9d821", null ],
+    [ "CalculateCharSizes", "class_d_a_v_a_1_1_text_layout.html#a5fd89f215194de1df117a5e2110e1683", null ],
+    [ "DAVA_DEPRECATED", "class_d_a_v_a_1_1_text_layout.html#a6588d37ec91cb9e027ac61a89e8cd1d1", null ],
+    [ "DAVA_DEPRECATED", "class_d_a_v_a_1_1_text_layout.html#aea3f62fd45c1ca836841f62018dc5ab0", null ],
+    [ "DAVA_DEPRECATED", "class_d_a_v_a_1_1_text_layout.html#ac4bf2d5b831901c5e32f3437b717f364", null ],
+    [ "FillList", "class_d_a_v_a_1_1_text_layout.html#a33ad1139ee012416a5c3c2f6b79c9c61", null ],
+    [ "GetCharSizes", "class_d_a_v_a_1_1_text_layout.html#ad858fd2cd04ea396986a03c6ac0d3f24", null ],
+    [ "GetLine", "class_d_a_v_a_1_1_text_layout.html#a2cb3a160177dc88bfb9a7350b0e75317", null ],
+    [ "GetOriginalText", "class_d_a_v_a_1_1_text_layout.html#a05df393b7d159972c289f8e9f08eebbd", null ],
+    [ "GetPreparedLine", "class_d_a_v_a_1_1_text_layout.html#adc01a7442ab9b56d6c9785f58d5343cb", null ],
+    [ "GetPreparedLine", "class_d_a_v_a_1_1_text_layout.html#ad05d92786b96b68a99a5064121a6d754", null ],
+    [ "GetPreparedText", "class_d_a_v_a_1_1_text_layout.html#ab7b71d1963653b03bf739c63e42ed985", null ],
+    [ "GetVisualLine", "class_d_a_v_a_1_1_text_layout.html#a5025ca1bf306ece92361d124e72c1e99", null ],
+    [ "GetVisualText", "class_d_a_v_a_1_1_text_layout.html#a29ba2b3efaa8428ee8d54adb07b83282", null ],
+    [ "IsEndOfText", "class_d_a_v_a_1_1_text_layout.html#a7083af03450cbd1cb87fee621a0c43ce", null ],
+    [ "IsRtlText", "class_d_a_v_a_1_1_text_layout.html#a4da27eba47dfe3d0f5c071f2096db3f0", null ],
+    [ "NextBySymbols", "class_d_a_v_a_1_1_text_layout.html#ae97b4999f6f671ecbd57cb231db40645", null ],
+    [ "NextByWords", "class_d_a_v_a_1_1_text_layout.html#a668c097905d891ef5aa1487514c73682", null ],
+    [ "Reset", "class_d_a_v_a_1_1_text_layout.html#a335e5078f6e22948735d442ba7150645", null ],
+    [ "Seek", "class_d_a_v_a_1_1_text_layout.html#a6a745572c19b238c0e3c953059777cf2", null ],
+    [ "SetCharSizes", "class_d_a_v_a_1_1_text_layout.html#a4cdc070edb62741dfe1c55fb14a9831a", null ],
+    [ "Tell", "class_d_a_v_a_1_1_text_layout.html#ab0ea232a5fcc6f5659b4c959bc5c1cb6", null ]
+];
